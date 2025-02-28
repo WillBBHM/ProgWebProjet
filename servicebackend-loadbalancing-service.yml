@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: servicebackend
+  name: servicebackend
+spec:
+  ports:
+    - nodePort: 30945
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: servicebackend
+  type: LoadBalancer
